@@ -49,6 +49,8 @@ namespace ToDoList.Controllers
                     query = query.Where(t => t.DueDate == today);
             }
             var tasks = query.OrderBy(t => t.DueDate).ToList();
+
+            model.Tasks = tasks;
             return View(model);
         }
 
